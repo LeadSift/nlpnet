@@ -2,13 +2,6 @@ import sys
 from distutils.core import setup
 from distutils.extension import Extension
 
-try:
-    import numpy as np
-except ImportError:
-    print "You don't seem to have NumPy installed. Please get a"
-    print "copy from www.numpy.org and install it"
-    sys.exit(1)
-
 def readme():
     with open('README.rst') as f:
         text = f.read()
@@ -32,5 +25,9 @@ setup(
       author = 'Erick Fonseca',
       author_email = 'erickrfonseca@gmail.com',
       url = 'http://nilc.icmc.usp.br/nlpnet',
+      install_requires = [
+        'nltk',
+        'numpy',
+      ],
       long_description = readme()
       )
